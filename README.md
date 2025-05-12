@@ -1,28 +1,35 @@
-# project-genai-post-generator
-This tool will analyze posts of a LinkedIn influencer and help them create the new posts based on the writing style in their old posts  
+# LinkedIn Post Generator using GenAI
 
-<img src="resources/tool.jpg"/>
+This project is an AI-powered tool designed to help LinkedIn influencers generate new posts that match their unique writing style. By analyzing past LinkedIn posts, the system learns the user's tone, topics, language, and typical post length. It then uses this information to create future posts with a consistent voice and style.
 
-Let's say Mohan is a LinkedIn influencer and he needs help in writing his future posts. He can feed his past LinkedIn posts to this tool and it will extract key topics. Then he can select the topic, length, language etc. and use Generate button to create a new post that will match his writing style. 
+## 🧠 What Does It Do?
 
-## Technical Architecture
-<img src="resources/architecture.jpg"/>
+Imagine Mohan, a LinkedIn influencer, wants to write a new post but is short on time or ideas. He can use this tool to:
+1. Upload his previous LinkedIn posts.
+2. Automatically extract the main topics, tone, language, and typical length of his posts.
+3. Choose a topic, desired post length, and language.
+4. Click "Generate" — and get a brand-new LinkedIn post written in his own style.
 
-1. Stage 1: Collect LinkedIn posts and extract Topic, Language, Length etc. from it.
-1. Stage 2: Now use topic, language and length to generate a new post. Some of the past posts related to that specific topic, language and length will be used for few shot learning to guide the LLM about the writing style etc.
+5. ## ⚙️ How It Works
 
-## Set-up
-1. To get started we first need to get an API_KEY from here: https://console.groq.com/keys. Inside `.env` update the value of `GROQ_API_KEY` with the API_KEY you created. 
-2. To get started, first install the dependencies using:
-    ```commandline
-     pip install -r requirements.txt
-    ```
-3. Run the streamlit app:
-   ```commandline
-   streamlit run main.py
-   ```
-Copyright (C) Codebasics Inc. All rights reserved.
+The system has two major stages:
 
+### Stage 1: Learning from Past Posts
+- Takes Mohan's previous posts as input.
+- Extracts key metadata: topic, language, post length, and writing style.
 
-**Additional Terms:**
-This software is licensed under the MIT License. However, commercial use of this software is strictly prohibited without prior written permission from the author. Attribution must be given in all copies or substantial portions of the software.
+### Stage 2: Post Generation
+- Mohan selects a topic, language, and length.
+- A few relevant past posts are used as examples (few-shot learning).
+- The tool uses a Generative AI model to generate a new post in Mohan's style.
+
+## 💡 Key Features
+
+- Personalized post generation using GenAI
+- Style-matching using few-shot learning
+- Topic and metadata extraction
+- Customizable output (length, language, theme)
+
+---
+
+Feel free to plug this into your own workflow, adapt it for different social media platforms, or use it to build your personal brand with less effort.
